@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.homeworksystem.mapper.HomeworkMapper">
+    <select id="getHomByHid" resultType="com.cloud.homeworksystem.bean.Homework">
+        select * from homework where hid=#{hid}
+    </select>
+
+    <insert id="insertHom" parameterType="com.cloud.homeworksystem.bean.Homework">
+        insert into homework(cid,hid,sid,score) values (#{cid},#{hid},#{sid},#{score})
+    </insert>
+
+    <delete id="deleteHomByHid" parameterType="com.cloud.homeworksystem.bean.Homework">
+        delete from homework where hid = #{hid}
+    </delete>
+
+    <update id="updateHom" parameterType="com.cloud.homeworksystem.bean.Homework">
+        update homework set score = (#{score}) where cid=#{cid} and hid=#{hid} and sid=#{sid}
+    </update>
+
+    <select id="getAllUpHomByCidHid" resultType="com.cloud.homeworksystem.bean.Homework">
+        select * from homework where cid=#{cid} and hid=#{hid}
+    </select>
+
+    <select id="getHomFisSta" resultType="com.cloud.homeworksystem.bean.Homework">
+        select * from homework where cid=#{cid} and hid=#{hid} and sid=#{sid}
+    </select>
+</mapper>
+

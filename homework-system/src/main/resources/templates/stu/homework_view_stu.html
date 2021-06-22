@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background: thistle">
+<h3 align="center">作业查看</h3><br/>
+<h5 align="center">已提交作业</h5><br/>
+<table align="center" border="1">
+    <thead>
+    <tr>
+        <th>课程ID</th>
+        <th>教师ID</th>
+        <th>作业ID</th>
+        <th>作业名</th>
+        <th>作业提交路径</th>
+        <th>截至日期</th>
+        <th>分数</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="homeworkf:${homeworkstatus}">
+        <td th:text="${homeworkf.cid}"></td>
+        <td th:text="${homeworkf.tid}"></td>
+        <td th:text="${homeworkf.hid}"></td>
+        <td th:text="${homeworkf.name}"></td>
+        <td th:text="${homeworkf.path}"></td>
+        <td th:text="${homeworkf.date}"></td>
+        <td th:text="${homeworkf.score}"></td>
+    </tr>
+    </tbody>
+</table>
+<h5 align="center">所有作业</h5>
+<table align="center" border="1">
+    <thead>
+    <tr>
+        <th>课程ID</th>
+        <th>教师ID</th>
+        <th>作业ID</th>
+        <th>作业名</th>
+        <th>作业提交路径</th>
+        <th>截至日期</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="homework:${homeworkdescs}">
+        <td th:text="${homework.cid}"></td>
+        <td th:text="${homework.tid}"></td>
+        <td th:text="${homework.hid}"></td>
+        <td th:text="${homework.name}"></td>
+        <td th:text="${homework.path}"></td>
+        <td th:text="${homework.date}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

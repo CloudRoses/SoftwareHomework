@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body align="center" style="background: lightpink">
+<table align="center" border="1">
+    <thead>
+    <tr>
+        <th>课程ID</th>
+        <th>作业ID</th>
+        <th>作业名</th>
+        <th>截至日期</th>
+        <th>学生ID</th>
+        <th>分数</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="homework:${homeworkStudents}">
+        <td th:text="${homework.cid}"></td>
+        <td th:text="${homework.hid}"></td>
+        <td th:text="${homework.name}"></td>
+        <td th:text="${homework.date}"></td>
+        <td th:text="${homework.sid}"></td>
+        <td th:text="${homework.score}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

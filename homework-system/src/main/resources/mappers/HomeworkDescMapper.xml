@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.homeworksystem.mapper.HomeworkDescMapper">
+    <select id="getAllHomByTid" resultType="com.cloud.homeworksystem.bean.HomeworkDesc">
+        select * from homework_desc where tid=#{tid}
+    </select>
+
+    <select id="getAllHomByCid" resultType="com.cloud.homeworksystem.bean.HomeworkDesc">
+        select * from homework_desc where cid=#{cid}
+    </select>
+
+    <select id="getHomByCidHid" resultType="com.cloud.homeworksystem.bean.HomeworkDesc">
+        select * from homework_desc where cid=#{cid} and hid=#{hid}
+    </select>
+
+    <insert id="insertHom" parameterType="com.cloud.homeworksystem.bean.HomeworkDesc">
+        insert into homework_desc(hid,name,path,tid,cid,date) values (#{hid},#{name},#{path},#{tid},#{cid},#{date})
+    </insert>
+
+    <delete id="deleteHomByHid" parameterType="com.cloud.homeworksystem.bean.HomeworkDesc">
+        delete from homework_desc where hid = #{hid}
+    </delete>
+
+    <update id="updateHom" parameterType="com.cloud.homeworksystem.bean.HomeworkDesc">
+        update homework_desc set name=(#{name}) where hid=#{hid}
+    </update>
+
+</mapper>
+

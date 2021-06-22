@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MY</title>
+</head>
+<body align="center" style="background: cadetblue">
+    <h1>我的主页</h1>
+    Id:
+    <p th:text="${session.user.id}"></p>
+    姓名:
+    <p th:text="${session.user.name}"></p>
+    <img src="images/my.jpg">
+</body>
+</html>

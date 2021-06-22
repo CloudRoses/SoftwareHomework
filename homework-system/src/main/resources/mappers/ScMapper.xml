@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.homeworksystem.mapper.ScMapper">
+    <select id="getScBySid" resultType="com.cloud.homeworksystem.bean.Sc">
+        select * from sc where sid=#{sid}
+    </select>
+
+    <insert id="insertSc" parameterType="com.cloud.homeworksystem.bean.Sc">
+        insert into sc(sid,cid) values (#{sid},#{cid})
+    </insert>
+
+    <delete id="deleteScBySid" parameterType="com.cloud.homeworksystem.bean.Sc">
+        delete from sc where sid = #{sid}
+    </delete>
+
+    <update id="updateSc" parameterType="com.cloud.homeworksystem.bean.Sc">
+        update sc set cid = #{cid} where sid=#{sid}
+    </update>
+
+</mapper>
+

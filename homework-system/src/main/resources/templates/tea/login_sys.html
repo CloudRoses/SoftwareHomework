@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background: lightgray">
+<div align="center">
+    <br><br><h2>教师登录界面</h2><br><br>
+    <form method="post" action="/LoginCheck_Sys">
+        ID:<input type="number" name="id" placeholder="请输入ID" required/><br/><br/>
+        用户名:<input type="text" name="username" placeholder="请输入用户名" required/><br><br>
+        密码：<input type="text" name="password" placeholder="请输入密码" required/><br><br>
+        <input type="submit" value="登录">
+    </form>
+    <br>
+    <form method="get" action="/register_sys">
+        <input type="submit" value="注册">
+    </form>
+    <br>
+    <form method="get" action="/login">
+        <input type="submit" value="学生登录">
+    </form>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.homeworksystem.mapper.CourseMapper">
+    <select id="getAllCourse" resultType="com.cloud.homeworksystem.bean.Course">
+        select * from course
+    </select>
+
+    <select id="getTeaCourse" resultType="com.cloud.homeworksystem.bean.Course">
+        select * from course where tid=#{tid}
+    </select>
+
+    <select id="getCouById" resultType="com.cloud.homeworksystem.bean.Course">
+        select * from course where cid=#{cid}
+    </select>
+
+    <insert id="insertCou" parameterType="com.cloud.homeworksystem.bean.Course">
+        insert into course(cid,name,tid) values (#{cid},#{name},#{tid})
+    </insert>
+
+    <delete id="deleteCouById" parameterType="com.cloud.homeworksystem.bean.Course">
+        delete from course where cid = #{cid}
+    </delete>
+
+    <update id="updateCou" parameterType="com.cloud.homeworksystem.bean.Course">
+        update course set name = (#{name}) where cid=#{cid}
+    </update>
+
+</mapper>
+

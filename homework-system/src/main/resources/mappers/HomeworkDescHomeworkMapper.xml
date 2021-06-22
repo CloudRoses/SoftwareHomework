@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.homeworksystem.mapper.HomeworkDescHomeworkMapper">
+    <select id="selectStudentHomeworkStatus" resultType="com.cloud.homeworksystem.bean.HomeworkDescHomework">
+        select hd.*,h.score from homework_desc hd,homework h where hd.hid=h.hid and hd.cid=h.cid and sid=#{sid}
+    </select>
+
+    <select id="selectAllStudentHomework" resultType="com.cloud.homeworksystem.bean.HomeworkStudentTea">
+        select hd.cid,hd.hid,hd.name,hd.date,h.sid,h.score from homework_desc hd join homework h on hd.cid=h.cid and hd.hid=h.hid where hd.cid=#{cid} and hd.hid=#{hid}
+    </select>
+
+</mapper>
+
